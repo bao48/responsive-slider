@@ -1,36 +1,5 @@
 jQuery(document).ready(function() {
 
-	
-	jQuery(".frontContainer").each(function() {
-		if (isEmpty(jQuery(this).children().children())) {
-			console.log(jQuery(this).children().children().attr("class"));
-			jQuery("<h3>Continue Reading</h3>").appendTo(jQuery(this).parent());
-			jQuery(this).remove();
-		} else if (!(jQuery(this).find(".frontRight").children().is("img"))) {
-			console.log(jQuery(this).find(".frontLeft").attr("class"));
-			jQuery(this).find(".frontLeft").attr("class", "");
-			jQuery(this).attr("style", "margin-top: 1.5em;");
-			jQuery(this).find(".frontRight").remove();
-		} else {
-			var heightLeft = "height: " + jQuery(this).find(".frontRight").find("img").height() + "px";
-			jQuery(this).find(".frontLeft").find(".content").attr("style", heightLeft);
-			console.log(heightLeft);
-		}
-	});
-	
-	jQuery(".topMain div").clone().appendTo("#rwd-top-nav");
-	jQuery(".widget").clone().appendTo(".rwd-sidebar");
-	
-	// toggle menu button: 3 lines --> X
-	jQuery('#rwd-navbutton').click(function(){
-		jQuery(this).toggleClass('open');
-	});
-	
-	// toggle blog-menu
-	jQuery("#rwd-navbutton").click(function(){
-    	jQuery("#rwd-top-nav").slideToggle();
-	});
-	
 	jQuery(".carousel").each(function() {
 		findID = "myCarousel" + x;
 		findIDh = "#" + findID;
